@@ -1,5 +1,5 @@
 # Etapa de build
-FROM golang:1.19-alpine AS builder
+FROM golang:1.20-alpine AS builder
 
 # Definir o diretório de trabalho dentro do contêiner
 WORKDIR /app
@@ -24,6 +24,9 @@ WORKDIR /root/
 
 # Copiar o binário construído da etapa de build
 COPY --from=builder /app/main .
+
+# Copiar a documentação Swagger gerada
+COPY --from=builder /app/docs ./docs
 
 # Expor a porta que o aplicativo vai rodar
 EXPOSE 8080
