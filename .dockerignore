@@ -1,0 +1,11 @@
+# Ignorar o diretório bin e os arquivos executáveis
+/bin
+/main
+# Ignorar diretórios e arquivos específicos de IDEs
+.vscode/
+.idea/
+*.swp
+*.log
+
+# Ignorar o diretório de cache do Go
+/pkg
